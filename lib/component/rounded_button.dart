@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:meetclique/constant.dart';
 
 class RoundeButton extends StatelessWidget {
-  RoundeButton({this.title, this.color, @required this.onPressed, });
+  RoundeButton({this.title, this.color, @required this.onPressed, this.style});
   final Color color;
   final String title;
+  final TextStyle style;
   final Function onPressed;
+
   //final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
+      padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 50.0),
       child: Material(
         color: color,
         elevation: 5.0,
@@ -22,7 +24,7 @@ class RoundeButton extends StatelessWidget {
           height: 42.0,
           child: Text(
             title,
-            style: KWelcomePageButtons,
+              style: style //: KWelcomePageButtons,
           ),
         ),
       ),

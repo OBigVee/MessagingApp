@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.black38,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
             Hero(
               tag: "logo",
               child: Container(
-                height: 250.0,
+                height: 200.0,
                 child: Image.asset("images/meetclique.png"),
               ),
             ),
@@ -33,72 +33,49 @@ class _LoginPageState extends State<LoginPage> {
               onChanged: (value) {
                 // do something with the user input
               },
-              decoration: InputDecoration(
-                  hintText: 'Enter your email',
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.lightBlueAccent, width: 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  )),
+              decoration: KLoginTextFieldDecoration.copyWith(
+                hintText: "Enter your email ...",
+              ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
             TextField(
               onChanged: (value) {
                 //Do something with the user input.
               },
-              decoration: InputDecoration(
-                  hintText: "enter password",
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.lightBlueAccent, width: 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  )),
+              decoration: KLoginTextFieldDecoration.copyWith(
+                  hintText: " enter your password ... "),
             ),
             SizedBox(
-              height: 10.0,
+              height: 60.0,
             ),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 0.0),
-          child: Material(
-            color: Colors.lightBlueAccent,
-            elevation: 5.0,
-            borderRadius: BorderRadius.circular(20.0),
-            child: MaterialButton(
-
-              onPressed: () {
-                Navigator.pushNamed(context, "chat_page");
-              },
-              minWidth: 200.0,
-              height: 42.0,
-              child: Text(
-                "login",
-                style: KWelcomePageButtons,
+//        RoundeButton(
+//          title: "login",
+//          style:TextStyle(),
+//          color: Colors.lightBlueAccent,
+//          onPressed: (){
+//            Navigator.pushNamed(context, "chat_page");
+//          },
+//        ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 100.0),
+              child: Material(
+                color: Colors.lightBlueAccent,
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(20.0),
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "chat_page");
+                  },
+                  minWidth: 200.0,
+                  height: 10.0,
+                  child: Text(
+                    "login",
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
           ],
         ),
       ),

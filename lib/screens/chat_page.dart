@@ -15,7 +15,7 @@ class _ChatPageState extends State<ChatPage> {
         leading: null,
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.close),
+              icon: Icon(Icons.cancel),
               onPressed: () {
                 // implement logout func
               }),
@@ -42,6 +42,7 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                   ),
                   FlatButton(
+
                     onPressed: () {
                       // implement send func.
                     },
